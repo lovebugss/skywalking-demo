@@ -8,20 +8,20 @@ spring:
     nacos:
       discovery:
         namespace: ${nacos.namespace}
-        server-addr: ${nacos.ip}:${nacos.port}
         group: ${nacos.group}
-        username: nacos
-        password: nacos
         register-enabled: true
+        ip: ${nacos.ip}
+        port: ${nacos.port}
       config:
         namespace: ${nacos.namespace}
         server-addr: ${nacos.ip}:${nacos.port}
         file-extension: yaml
         group: ${nacos.group}
-        username: nacos
-        password: nacos
         refresh-enabled: true
+
   main:
     allow-bean-definition-overriding: true
   application:
     name: gateway
+  profiles:
+    active: dev
